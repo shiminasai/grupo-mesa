@@ -23,7 +23,17 @@
 		</div>
 		<div class="panel-body">
 			{{ Form::label('encargado', 'Encargado de manejar la Propiedad') }}
-			<input type="text" name="encargado" class="form-control" disabled="disable" value={{ Auth::user()->username }}>
+			@if(Auth::user()->role_id == 0)
+				<?php $usuarios = User::all(); ?>
+				<select name="encargado" class="form-control">
+					@foreach($usuarios as $value)
+						<option value="{{ $value->username }}">{{ $value->nombre }}</option>
+					@endforeach
+				</select>
+			@else
+				<input type="text" name="encargado" class="form-control" disabled="disable" value={{ Auth::user()->username }}>
+			@endif
+			
 
 			{{--AL DARLE GUARDAR DEBERIA GUARDAR ESTE CAMPO, YA SEA EL NOMBRE DEL ENCARGADO O EL ID COMO LLAVE FORANEA--}}
 
