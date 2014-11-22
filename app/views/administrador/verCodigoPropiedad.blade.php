@@ -6,77 +6,15 @@
 
 @section('formulario')
 <div class="tituloanuncio">
-	<h4 style="text-align:center;"><strong>Ver Propiedades</strong></h4>
+	<h4 style="text-align:center;"><strong>Filtro por Codigo</strong></h4>
 </div>
 
 
-<div>
-	@if(Auth::user()->role_id == '0')
-
-	<div class="col-sm-4">
-	{{ Form::open(array('url' => 'admin/filtro/propiedad/codigo', 'class' => 'form-horizontal', 'method' => 'GET')) }}
-		<div class="panel-body">
-			<div class="form-group">
-
-				{{ Form::label('id', 'Buscar por Codigo de Propiedad', array('class' => 'col-sm-7 control-label')) }}
-				<div class="col-sm-5">
-					{{ Form::text('codigo', Input::old('codigo'), array('class' => 'form-control', 'placeholder'=> 'GMAG-1')) }}	
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-5 col-sm-10">
-					{{ Form::submit('Buscar' , array('class'=> 'btn btn-primary')) }}
-				</div>	
-			</div>
-		</div>
-
-		{{ Form::close() }}			
-
-	</div>
-
-
-	<div class="col-sm-4">
-
-		{{ Form::open(array('url' => 'admin/filtro/propiedad/asesor', 'class' => 'form-horizontal', 'method' => 'GET')) }}
-		<div class="panel-body">
-			<div class="form-group">
-				{{ Form::label('id', 'Buscar por Asesor', array('class' => 'col-sm-7 control-label')) }}
-				<div class="col-sm-5">
-					{{ Form::text('asesor', Input::old('asesor'), array('class' => 'form-control', 'placeholder'=> 'GMAG')) }}	
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-5 col-sm-10">
-					{{ Form::submit('Buscar' , array('class'=> 'btn btn-primary')) }}
-				</div>	
-			</div>
-		</div>
-
-		{{ Form::close() }}	
-
-	</div>
-
-	<div class="col-sm-offset-8">
-		<div class="panel-body">
-			<a href="{{URL::to('admin/filtro/propiedad/activas')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-th-list" style="margin-right:0.6em;"></span>Mostrar Solo Propiedades Activas</button></a>
-		</div>
-	</div>
-
-	@endif	
-
-</div>
-
-@if(Session::has('message'))
-<div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
-
-
-@if(Auth::user()->role_id == '1' && $propiedades->count() == 0)
-
+@if($propiedades->count() == 0)
 <br><br>
-<div class="alert alert-info">Usted no tiene Propiedades Activas</div>
+<div class="alert alert-info">No existe Propiedad con ese Código</div>
+
+
 @else
 
 <div class="table-responsive">
@@ -127,7 +65,7 @@
 
 					<?php
 						$valor = " ";
-						if($value->moneda == 'Dolares'){
+						if($value->moneda == 'dolares'){
 							$valor="U$";
 						}else{
 							$valor="C$";
@@ -181,7 +119,7 @@
 			@endforeach	
 		</tbody>
 	</table>
-	{{ $propiedades->links() }}
+
 </div>
 
 
