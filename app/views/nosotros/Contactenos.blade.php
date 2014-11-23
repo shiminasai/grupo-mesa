@@ -5,7 +5,7 @@
 @if(Session::has('message'))
   <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
-
+ <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <div class="contac">
   <hr class="separadorcontac">
   <iframe src="https://mapsengine.google.com/map/embed?mid=z8FQWo_zMQHQ.kR9aUb3E0cW0" width="640" height="480"></iframe>
@@ -15,10 +15,23 @@
     <br>
     <div class="form-group">
       
-      <label class="col-lg-5 control-label">Telefonos: (505) 2253-7777 / USA:0109453530</label>
+      <label class="col-lg-5 control-label">Telefonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a>/ USA:0109453530</label>
       
       <label class="col-lg-4 control-label">Email: ventas@grupomesa.com</label>
-      <label class="col-lg-3 control-label">Skype: mesabienesraices</label>
+      <label class="col-lg-3 control-label">
+
+            <div id="SkypeButton_Call_mesabienesracies_1">
+              <script type="text/javascript">
+                Skype.ui({
+                  "name": "dropdown",
+                  "element": "SkypeButton_Call_mesabienesracies_1",
+                  "participants": ["mesabienesracies"],
+                  "imageSize": 36
+                });
+              </script>
+            </div>
+
+      </label>
     </div>
   </div>
   <br>

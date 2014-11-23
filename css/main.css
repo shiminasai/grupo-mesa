@@ -287,6 +287,14 @@ h4{
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 }
+#SkypeButton_Call_mesabienesracies_1 img{
+	margin: 0px !important;
+	vertical-align: 0px !important;
+	width: 70px;
+}
+#dropdown_SkypeButton_Call_mesabienesracies_1{
+	z-index: 99;
+}
 hr.separadorcontac{
 	height: 5px;
 	border-style: solid;
@@ -415,6 +423,10 @@ hr.separador1:after {
 	font-family: 'Merriweather';
 	color: white;
 
+}
+.infoB a {
+	color: white;
+	text-decoration: none;
 }
 .meinteresadiv{
 	position: fixed; 
