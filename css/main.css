@@ -591,19 +591,42 @@ hr.separador1:after {
 	font-weight: bold;
 }
 
-.fa{
+.list-group-item .fa{
 	color: #3a57af;
 }
 .usa{
 	font-family: Arial;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 20px;
 	font-size: 23px;
 	margin-top: -8px;
 	color: #3a57af;
 
 	}
+.limpio{
+	border-left: 0px solid #ddd !important;
+	border-right: 0px solid #ddd !important;
+	border-bottom: 0px solid #ddd !important;
+}
+.boton-ver{
+	border: 0px solid #ddd !important;
+	background-color: #337ab7 !important;
+	text-align: center !important;
+	text-decoration: none;
+}
+.boton-ver a{
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.boton-ver a:hover{
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 /*-----------------------------------------------------------media screen------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	#buscanav{
