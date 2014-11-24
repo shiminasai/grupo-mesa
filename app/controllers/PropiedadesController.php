@@ -113,6 +113,59 @@
 			return View::make('administrador.detallePropiedad')->with('propiedad', $propiedad);
 		}
 
+		public function filtro(){
+				
+			if ($this->validateFormF(Input::all()) === true) {
+				$id = Input::get('codigo');
+
+			
+
+				$propiedad = Propiedad::where('codigo',$id)->get();
+
+				if($propiedad->count() == 0){
+
+					$propiedad = Propiedad::where('codigo','like','%'.$id.'%')->get();
+				}
+
+
+
+			return View::make('administrador.verCodigoPropiedad')->with('propiedades', $propiedad);
+
+			}else{
+				Session::flash('message', 'El Campo Codigo de Propiedad esta Vacio');
+				return Redirect::back()->withErrors($this->validateFormF(Input::all()))->withInput();
+			}
+
+
+		}
+
+		public function filtro2(){
+				
+			if ($this->validateFormA(Input::all()) === true) {
+				$id = Input::get('asesor');
+
+				// $user = User::where('username',$id)->first();
+
+				// $clientes = Propietario::where('',$user->id)->get();
+
+				// foreach($clientes as value){
+
+				// $propiedad = Propiedad::where('id_propietario',$id)->get();
+				// }
+				
+				$propiedad = Propiedad::where('id_usuario', $id)->get();
+
+
+			return View::make('administrador.verAsesorPropiedad')->with('propiedades', $propiedad);
+
+			}else{
+				Session::flash('message', 'El Campo Asesor esta Vacio');
+				return Redirect::back()->withErrors($this->validateFormA(Input::all()))->withInput();
+			}
+
+
+		}
+
 
 		public function showupdate($id){
 			$propiedad = Propiedad::find($id);
@@ -627,6 +680,47 @@
 				$message = array(
 					'required' => 'el campo :attribute es requerido',
 					'unique' => 'el titulo ya existe'
+					);
+
+				$validation = Validator::make($inputs, $rules, $message);
+
+				if($validation->fails()){
+					return $validation;
+				}else{
+					return true;
+				}
+			}
+
+
+			private function validateFormF($inputs = array()){
+				$rules = array(
+					
+					'codigo'=> 'required'
+
+					);
+				$message = array(
+					'required' => 'El campo :attribute es requerido',
+					
+					);
+
+				$validation = Validator::make($inputs, $rules, $message);
+
+				if($validation->fails()){
+					return $validation;
+				}else{
+					return true;
+				}
+			}
+
+			private function validateFormA($inputs = array()){
+				$rules = array(
+					
+					'asesor'=> 'required'
+
+					);
+				$message = array(
+					'required' => 'El campo :attribute es requerido',
+					
 					);
 
 				$validation = Validator::make($inputs, $rules, $message);
