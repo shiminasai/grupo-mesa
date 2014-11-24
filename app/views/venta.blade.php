@@ -19,7 +19,7 @@
     ?>
 
 <?php $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?>
-    <div class="view view-second">                  
+    <div class="viewprinc view-second">                  
       <img src="{{ asset('upload/'. $imagen->ruta .'') }}"/>
       <div class="mask"></div>
       <div class="content">

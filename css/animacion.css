@@ -11,11 +11,24 @@
    box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
 
 }
+.viewprinc {
+   width: 100%;
+   margin: 10px;
+   height: 240px;
+   border: 0.5em solid #fff;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   -webkit-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
+   -moz-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
+   box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
+
+}
 .view img{
    width: 100%;
    height: auto;
 }
-.viewmain img{
+.viewprinc img{
    width: 100%;
    height: auto;
 }
@@ -29,7 +42,14 @@
    top: 0;
    left: 0;
 }
-
+.viewprinc .mask,.viewprinc .content {
+   width: 100%;
+   height: auto;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
 /*trasicion de la maskara*/
 .view-second .mask {
    background-color: rgba(115,146,184, 0.7);
@@ -64,6 +84,16 @@
 /*Titulo*/
 
 .view h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 17px;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 20px 0 0 0;
+}
+.viewprinc h2 {
    text-transform: uppercase;
    color: #fff;
    text-align: center;
@@ -114,6 +144,15 @@
    padding: 10px 20px 20px;
    text-align: center;
 }
+.viewprinc p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
 
 /*Animacion parrafo*/
 .view-second p {
@@ -145,6 +184,17 @@
 /*Leer mas*/
 
 .view a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #000;
+   color: #fff;
+   text-transform: uppercase;
+   -webkit-box-shadow: 0 0 1px #000;
+   -moz-box-shadow: 0 0 1px #000;
+   box-shadow: 0 0 1px #000;
+}
+.viewprinc a.info {
    display: inline-block;
    text-decoration: none;
    padding: 7px 14px;

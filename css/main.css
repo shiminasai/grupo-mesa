@@ -577,6 +577,33 @@ hr.separador1:after {
 .espacio{
 	height: 4em !important;
 }
+/*---------------Detalles casa-------------------*/
+.list-group{
+	margin-left: 10px;
+	width: 100%;
+	margin-top: -5px;
+	
+}
+.list-group-item{
+	border-radius: 0px !important;
+	height: 40px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.fa{
+	color: #3a57af;
+}
+.usa{
+	font-family: Arial;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	font-size: 23px;
+	margin-top: -8px;
+	color: #3a57af;
+
+	}
 /*-----------------------------------------------------------media screen------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	#buscanav{
