@@ -106,11 +106,12 @@
 		</div>
 	<div class="infoB">
 
-<h4>Teléfonos: 505-22537777</h4>
-<h4>USA:0109453530</h4>
-<h4>Email:ventas@grupo-mesa.com</h4>
-<h4>Skype: mesabienesraices</h4>
-			</div>
+<h4>Teléfonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a></h4>
+<h4>USA: <a href="callto://+0109453530"><i class="fa fa-skype"> </i> 0109453530</a></h4>
+<h4>Email: ventas@grupo-mesa.com</h4>
+<h4>Skype: <a href="skype:mesabienesraices?call"><i class="fa fa-skype"> </i> mesabienesraices</a></h4>
+
+	</div>
 		</section>
 
 		

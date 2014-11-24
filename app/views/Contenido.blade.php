@@ -26,9 +26,14 @@
           $expresionregular = "/(^.{0,200})(\W+.*$)/"; 
           $cadena = ($value->descripcion); 
           $reemplazo = "\${1}";
+         
+          $dep = DB::table('depto')->where('id','=',$value->departamento)->first();
+          
+          
     ?>
 
-    <div class="view view-second">
+
+    <div class="viewprinc view-second">
     <?php $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?>
     @if($imagen->count() == 0)
     <img src="" width="80%"/>
@@ -43,6 +48,48 @@
   
       </div>
     </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <i class="pull-left fa fa-map-marker fa-lg"></i>
+          <p class="pull-left">{{ $value->pais }}, {{$dep->opcion}}</p>
+        </li>
+        <li class="list-group-item">
+          <i class="pull-left fa fa-home fa-lg"></i>
+          <p class="pull-left">{{$value->tipopropiedad}}</p>
+        </li>
+        <li class="list-group-item">
+           <i class="pull-left fa fa-key fa-lg"></i>
+          <p class="pull-left">{{$value->tipoanuncio}}</p>
+        </li>
+        <?php
+            $valor = " ";
+            if($value->moneda == 'dolares'){
+              $valor="U$";
+            }else{
+              $valor="C$";
+            }
+        ?>
+
+    @if($value->tipoanuncio == 'Venta')
+    <li class="list-group-item">
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
+        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
+    </li>
+
+    @elseif($value->tipoanuncio == 'Alquiler')
+    <li class="list-group-item">
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
+        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
+    </li>
+    @else
+      <strong>Venta: {{$valor}} {{$value->precioventa}}</strong><br>
+
+    @endif 
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
         <a href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary">Ver Propiedad</a> 
   </div>
 

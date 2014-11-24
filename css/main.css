@@ -287,6 +287,14 @@ h4{
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 }
+#SkypeButton_Call_mesabienesracies_1 img{
+	margin: 0px !important;
+	vertical-align: 0px !important;
+	width: 70px;
+}
+#dropdown_SkypeButton_Call_mesabienesracies_1{
+	z-index: 99;
+}
 hr.separadorcontac{
 	height: 5px;
 	border-style: solid;
@@ -415,6 +423,10 @@ hr.separador1:after {
 	font-family: 'Merriweather';
 	color: white;
 
+}
+.infoB a {
+	color: white;
+	text-decoration: none;
 }
 .meinteresadiv{
 	position: fixed; 
@@ -565,6 +577,33 @@ hr.separador1:after {
 .espacio{
 	height: 4em !important;
 }
+/*---------------Detalles casa-------------------*/
+.list-group{
+	margin-left: 10px;
+	width: 100%;
+	margin-top: -5px;
+	
+}
+.list-group-item{
+	border-radius: 0px !important;
+	height: 40px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.fa{
+	color: #3a57af;
+}
+.usa{
+	font-family: Arial;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	font-size: 23px;
+	margin-top: -8px;
+	color: #3a57af;
+
+	}
 /*-----------------------------------------------------------media screen------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	#buscanav{
