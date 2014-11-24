@@ -15,8 +15,8 @@
 						<input type="radio" value="Alquiler" id="Alquiler" name="venta" />
 						<label for="Alquiler" >Alquiler</label>
 						<br>
-						<input type="radio" value="Venta y Alquiler" id="venta y alquiler" name="venta" />
-						<label for="Alquiler" >Venta y Alquiler</label>
+						<!-- <input type="radio" value="Venta y Alquiler" id="venta y alquiler" name="venta" />
+						<label for="Alquiler" >Venta y Alquiler</label> -->
 					</div>
 
 					<div class="input-group">
@@ -51,7 +51,7 @@
 					<div class="input-group">          
 						<span class="input-group-addon"><label class="glyphicon glyphicon-home"></label></span>
 						
-						<select class="form-control municipio select2" name="municipio" id="" disabled="disable" onclick="desactivar2(this.value)">
+						<select class="form-control municipio select2" name="municipio" disabled="disable" onclick="desactivar2(this.value)">
 						<option value='Mun'>Todos</option>				
 						</select>
 					</div>
@@ -59,7 +59,7 @@
 					<h5 class="titulos">Zona</h5>
 					<div class="input-group">          
 						<span class="input-group-addon"><label class="glyphicon glyphicon-home"></label></span>
-						<select class="form-control" name="zona" id="select3" disabled="disable">
+						<select class="form-control select3" name="zona" disabled="disable">
 						<option value='Zone'>Todos</option>
 
 						</select>

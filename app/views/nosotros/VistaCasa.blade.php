@@ -88,7 +88,7 @@
 
 		<?php
 			$valor = " ";
-			if($propiedad->moneda == 'dolares'){
+			if($propiedad->moneda == 'Dolares'){
 				$valor="U$";
 			}else{
 				$valor="C$";
