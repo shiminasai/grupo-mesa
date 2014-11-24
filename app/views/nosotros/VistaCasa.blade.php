@@ -8,6 +8,21 @@
 	<meta property="og:url" content="{{Request::url()}}" />
 
 @stop
+@section('cardtwitter')
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@grupomesagt">
+<meta name="twitter:creator" content="@grupomesagt">
+<meta name="twitter:title" content="{{$propiedad->titulo}}">
+<meta name="twitter:description" content="{{$propiedad->descripcion}}">
+<meta name="twitter:image:src" content="{{ asset('upload/'. $imagen->ruta .'') }}">
+<meta name="twitter:url" content="{{Request::url()}}" />
+@stop
+@section(itempropgoogle')
+<meta itemprop="name" content="{{$propiedad->titulo}}">
+<meta itemprop="description" content="{{$propiedad->descripcion}}">
+<meta itemprop="image" content="{{ asset('upload/'. $imagen->ruta .'') }}">
+<meta itemprop="url" content="{{Request::url()}}" />
+@stop
 @section('vistacasa')
 
 <div class="col-md-7">
