@@ -581,7 +581,8 @@ hr.separador1:after {
 .list-group{
 	margin-left: 10px;
 	width: 100%;
-	margin-top: -5px;
+	margin-top: -10px;
+
 	
 }
 .list-group-item{
@@ -589,6 +590,9 @@ hr.separador1:after {
 	height: 40px;
 	font-size: 16px;
 	font-weight: bold;
+	-webkit-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
+	-moz-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
+	box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
 }
 
 .list-group-item .fa{
@@ -607,6 +611,10 @@ hr.separador1:after {
 	border-left: 0px solid #ddd !important;
 	border-right: 0px solid #ddd !important;
 	border-bottom: 0px solid #ddd !important;
+	-webkit-box-shadow: 0em 0em 0px #e6e6e6 !important;
+	-moz-box-shadow: 0em 0em 0px #e6e6e6 !important;
+	box-shadow: 0em 0em 0px #e6e6e6 !important;
+
 }
 .boton-ver{
 	border: 0px solid #ddd !important;
@@ -626,7 +634,39 @@ hr.separador1:after {
 	font-weight: bold;
 	text-decoration: none;
 }
+.mvitas{
+	height: 30px;
+	font-size: 11px !important;
+	font-weight: bold;
+}
+.mvitas .usa{
+	font-family: Arial;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: -7px;
+	color: #3a57af;
 
+}
+.botonmas-ver{
+	border: 0px solid #ddd !important;
+	background-color: #337ab7 !important;
+	text-align: center !important;
+	text-decoration: none;
+}
+.botonmas-ver a{
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0px !important;
+}
+.botonmas-ver a:hover{
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
 /*-----------------------------------------------------------media screen------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	#buscanav{
