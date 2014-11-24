@@ -209,7 +209,7 @@ Route::group(array('before' => 'auth'), function()
 		if(Auth::user()->role_id == 0){
 		$propiedades = DB::table('propiedades')->orderby('created_at','DESC')->paginate(10);
 	}else{
-		$propiedades = DB::table('propiedades')->where('id_usuario',Auth::user()->username)->orderby('created_at','DESC')->paginate(10);
+		$propiedades = DB::table('propiedades')->where('id_usuario',Auth::user()->username)->where('estado','1')->orderby('created_at','DESC')->paginate(10);
 	}
 
 
@@ -285,7 +285,18 @@ Route::group(array('before' => 'auth'), function()
 	Route::post('administrador/zone', array('uses' => 'ZonasController@guardar'));
 
 	
+	Route::get('admin/filtro/propiedad/activas', function(){
 
+		$propiedades = DB::table('propiedades')->where('estado','1')->orderby('created_at','DESC')->paginate(10);
+	
+		return View::make('administrador.PropiedadesActivas')->with('propiedades', $propiedades);// vista de las propiedades activas
+	});
+
+
+	Route::get('admin/filtro/propiedad/codigo', array('uses' => 'PropiedadesController@filtro'));
+
+
+	Route::get('admin/filtro/propiedad/asesor', array('uses' => 'PropiedadesController@filtro2'));
 	
 
 
