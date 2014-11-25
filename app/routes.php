@@ -88,7 +88,7 @@ Route::post('send/shareemailcasa', function(){
 
 	Mail::send('emails.welcome3',  $data, function($message) use($data)
 	{
-		$message->to(Input::get('emailto'), 'Cliente')->subject('Propiedad Recomendada por '.Input::get('nombre1'))->cc('limb55@hotmail.com');
+		$message->to(Input::get('emailto'), 'Cliente')->subject('Propiedad Recomendada por '.Input::get('nombre1'))->cc('ventas@grupo-mesa.com');
 	});
 
 	Session::flash('message', 'Mensaje enviado');
