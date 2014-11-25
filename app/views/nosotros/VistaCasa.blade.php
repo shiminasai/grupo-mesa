@@ -176,6 +176,80 @@
 <span class='st_twitter_large' displayText='Tweet'></span>
 <span class='st_linkedin_large' displayText='LinkedIn'></span>
 <span class='st_googleplus_large' displayText='Google +'></span>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+
+<button id="mailshare" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalshare">compartir</button>	
+
+<!-- Modal -->
+<div class="modal fade" id="myModalshare" tabindex="-1" style="margin-top:2em !important" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">Comparte con un Amigo</h4>
+			</div>
+			<div class="modal-body">
+				{{ Form::open(array('url' => 'send/shareemailcasa', 'method' => 'POST', 'class'=> 'form-horizontal'), array('role' => 'form')) }}
+
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Nombre</label>
+					<div class="col-lg-10">
+						<input required type="text" class="form-control" placeholder="Nombre y Apellido" name="nombre1">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-2 control-label">E-mail</label>
+					<div class="col-lg-10">
+						<input required type="email" class="form-control" placeholder="Escriba su Correo" name="email1">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Enviar a</label>
+					<div class="col-lg-10">
+						<input required type="email" class="form-control" placeholder="Correo a Enviar" name="emailto">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Mensaje</label>
+					<div class="col-lg-10">
+						<textarea required class="form-control" rows="2" name="mensaje1"></textarea>
+					</div>
+				</div>
+				
+				<div>
+				    <input name="idshare" type="hidden" value="{{$propiedad->id}}">
+				    <input name="tiposhare" type="hidden" value="{{$propiedad->tipoanuncio}} de {{$propiedad->tipopropiedad}}">
+				    <input name="tituloshare" type="hidden" value="{{$propiedad->titulo}}">
+				    <input name="descshare" type="hidden" value="{{$propiedad->descripcion}}">
+				    <input name="banosshare" type="hidden" value="{{$propiedad->banos}}">
+				    <input name="cuartosshare" type="hidden" value="{{$propiedad->cuartos}}">
+				    <input name="terrenoshare" type="hidden" value="{{$propiedad->areaterreno}}">
+				    <input name="urlshare" type="hidden" value="{{Request::url()}}#ContenidoPrincipal">
+				    <input name="medidashare" type="hidden" value="{{$propiedad->medidaterreno}}">
+				    
+                    <input name="pvtashare" type="hidden" value="{{$valor}} {{$propiedad->precioventa}}">
+                    <input name="palshare" type="hidden" value="{{$valor}} {{$propiedad->precioalquiler}} {{$propiedad->tiempo}}">
+                    <input name="anuncioshare" type="hidden" value="{{$propiedad->tipoanuncio}}">
+				    
+				    <input name="detalleshare" type="hidden" value="{{$propiedad->detallecasa}}">
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				{{ Form::submit('Enviar' , array('class'=> 'btn btn-primary')) }}
+			</div>
+			{{ Form::close() }}
+		</div>
+	</div>
+</div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------->
+
 <hr>
       <div class="socialtwitter">
         <a href="https://twitter.com/share" data-count="horizontal" class="twitter-share-button" data-via="grupomesagt" data-lang="es" data-hashtags="megustapropiedad">Twittear</a>
