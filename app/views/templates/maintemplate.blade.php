@@ -106,11 +106,12 @@
 		</div>
 	<div class="infoB">
 
-<h4>Teléfonos: 505-22537777</h4>
-<h4>USA:0109453530</h4>
-<h4>Email:ventas@grupo-mesa.com</h4>
-<h4>Skype: mesabienesraices</h4>
-			</div>
+<h4>Teléfonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a></h4>
+<h4>USA: <a href="callto://+0109453530"><i class="fa fa-skype"> </i> 0109453530</a></h4>
+<h4>Email: ventas@grupo-mesa.com</h4>
+<h4>Skype: <a href="skype:mesabienesraices?call"><i class="fa fa-skype"> </i> mesabienesraices</a></h4>
+
+	</div>
 		</section>
 
 		
@@ -385,10 +386,11 @@
 				<div class="col-md-1"></div>     
 
 				<?php $propiedades = Propiedad::where('visitas', '>=' , 0)->where('estado','=','1')->orderBy('visitas','DESC')->take(5)->get(); ?>  
-				
 
 				@foreach($propiedades as $value)
-					<?php $imagen2 = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?> 
+					<?php $imagen2 = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first();
+							$dep2 = DB::table('depto')->where('id','=',$value->departamento)->first(); 
+					?> 
 					<div class="col-xs-6 col-sm-4 col-md-2">
 						<div class="tituloanuncio">
 							<h6 style="font-size: 13px"><strong>{{ $value->titulo }}</strong></h6>
@@ -403,7 +405,54 @@
 								
 							</div>
 						</div>
-						<a href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary" style="margin-left:1em !important">Ver Propiedad</a> 						
+		<ul class="list-group">
+		        <li class="list-group-item mvitas">
+		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
+		        </li>
+		        <li class="list-group-item mvitas">
+		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <p class="pull-left">{{$value->tipopropiedad}}</p>
+		        </li>
+		        <?php
+		            $valor = " ";
+		            if($value->moneda == 'dolares'){
+		              $valor="U$";
+		            }else{
+		              $valor="C$";
+		            }
+		        ?>
+
+		    @if($value->tipoanuncio == 'Venta')
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
+		    </li>
+		    <li class="limpio list-group-item mvitas"></li>
+		    @elseif($value->tipoanuncio == 'Alquiler')
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
+		    </li>
+		    <li class="limpio list-group-item mvitas"></li>
+		    @else
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
+		    </li>
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
+		    </li>
+		    @endif
+		    <li class="botonmas-ver list-group-item mvitas">
+		    	<a class="center-block" href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary" style="margin-left:1em !important">Ver Propiedad</a> 
+		    </li>
+      </ul>
 					</div>
 
 
@@ -435,8 +484,56 @@
 								
 							</div>
 						</div>
-						<a href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary" style="margin-left:1em !important">Ver Propiedad</a> 						
-					</div>
+		<ul class="list-group">
+		        <li class="list-group-item mvitas">
+		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
+		        </li>
+		        <li class="list-group-item mvitas">
+		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <p class="pull-left">{{$value->tipopropiedad}}</p>
+		        </li>
+		        <?php
+		            $valor = " ";
+		            if($value->moneda == 'dolares'){
+		              $valor="U$";
+		            }else{
+		              $valor="C$";
+		            }
+		        ?>
+
+		    @if($value->tipoanuncio == 'Venta')
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
+		    </li>
+		    <li class="limpio list-group-item mvitas"></li>
+		    @elseif($value->tipoanuncio == 'Alquiler')
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
+		    </li>
+		    <li class="limpio list-group-item mvitas"></li>
+		    @else
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
+		    </li>
+		    <li class="list-group-item mvitas">
+		        <i class="pull-left usa">U</i>
+		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
+		    </li>
+		    @endif
+		    <li class="botonmas-ver list-group-item mvitas">
+		    	<a class="center-block" href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary" style="margin-left:1em !important">Ver Propiedad</a> 
+		    </li>
+      </ul>
+						
+		</div>
 
 
 				@endforeach   
