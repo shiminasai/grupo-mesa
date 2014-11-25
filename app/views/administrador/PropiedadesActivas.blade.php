@@ -14,7 +14,63 @@
 <div class="alert alert-info">No hay propiedades Activas</div>
 @endif
 
+<div>
+	@if(Auth::user()->role_id == '0')
 
+	<div class="col-sm-4">
+	{{ Form::open(array('url' => 'admin/filtro/propiedad/codigo', 'class' => 'form-horizontal', 'method' => 'GET')) }}
+		<div class="panel-body">
+			<div class="form-group">
+
+				{{ Form::label('id', 'Buscar por Codigo de Propiedad', array('class' => 'col-sm-7 control-label')) }}
+				<div class="col-sm-5">
+					{{ Form::text('codigo', Input::old('codigo'), array('class' => 'form-control', 'placeholder'=> 'GMAG-1')) }}	
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-10">
+					{{ Form::submit('Buscar' , array('class'=> 'btn btn-primary')) }}
+				</div>	
+			</div>
+		</div>
+
+		{{ Form::close() }}			
+
+	</div>
+
+
+	<div class="col-sm-4">
+
+		{{ Form::open(array('url' => 'admin/filtro/propiedad/asesor', 'class' => 'form-horizontal', 'method' => 'GET')) }}
+		<div class="panel-body">
+			<div class="form-group">
+				{{ Form::label('id', 'Buscar por Asesor', array('class' => 'col-sm-7 control-label')) }}
+				<div class="col-sm-5">
+					{{ Form::text('asesor', Input::old('asesor'), array('class' => 'form-control', 'placeholder'=> 'GMAG')) }}	
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-10">
+					{{ Form::submit('Buscar' , array('class'=> 'btn btn-primary')) }}
+				</div>	
+			</div>
+		</div>
+
+		{{ Form::close() }}	
+
+	</div>
+
+	<div class="col-sm-offset-8">
+		<div class="panel-body">
+			<a href="{{URL::to('administrador/verPropiedades')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-left" style="margin-right:0.6em;"></span>Regresar</button></a>
+		</div>
+	</div>
+
+	@endif	
+
+</div>
 
 <div class="table-responsive">
 	<table class="table table-striped table-hover table-condensed panel-primary">
