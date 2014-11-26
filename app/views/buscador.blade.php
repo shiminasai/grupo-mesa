@@ -11,7 +11,13 @@
 <div class="alert alert-info">No se encontro coincidencias con los parametros solicitados</div>
 @endif
 
+
+
   @foreach($propiedades as $value)
+  
+  @if($value->estado == 1)
+
+
   <div class="col-md-4 vista" >
 <?php $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?>
     <div class="tituloanuncio">
@@ -35,6 +41,7 @@
     </div>
     <a href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary" style="margin-left:1em !important">Ver Propiedad</a>  
   </div>
+  @endif
 
   @endforeach
 </div>
