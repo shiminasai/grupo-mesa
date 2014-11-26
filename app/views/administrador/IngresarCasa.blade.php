@@ -24,7 +24,7 @@
 		<div class="panel-body">
 			{{ Form::label('encargado', 'Encargado de manejar la Propiedad') }}
 			@if(Auth::user()->role_id == 0)
-				<?php $usuarios = User::all(); ?>
+				<?php $usuarios = User::where('estado', 1)->orderBy('nombre')->get(); ?>
 				<select name="encargado" class="form-control">
 					@foreach($usuarios as $value)
 						<option value="{{ $value->username }}">{{ $value->nombre }}</option>

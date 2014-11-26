@@ -60,6 +60,40 @@ Route::post('send/email', function(){
 	// Session::flash('message', 'Mensaje enviado');
 	return Redirect::back();
 });
+//Ruta para compartir por correo
+Route::post('send/shareemailcasa', function(){
+
+	$data = array(    
+                    'idshare'       => Input::get('idshare'),
+				    'tiposhare'     => Input::get('tiposhare'),
+				    'tituloshare'   => Input::get('tituloshare'),
+				    'descshare'     => Input::get('descshare'),
+				    'banosshare'    => Input::get('banosshare'),
+				    'cuartosshare'  => Input::get('cuartosshare'),
+				    'terrenoshare'  => Input::get('terrenoshare'),
+                    'medidashare'   => Input::get('medidashare'),
+				    'urlshare'      => Input::get('urlshare'),
+				    
+                    'pvtashare'     => Input::get('pvtashare'),
+                    'palshare'      => Input::get('palshare'),
+                    'anuncioshare'  => Input::get('anuncioshare'),
+				    
+				    'detalleshare'  => Input::get('detalleshare'),
+        
+                    'name1'         => Input::get('nombre1'),        
+                    'email1'        => Input::get('email1'),
+                    'emailto'       => Input::get('emailto'),
+                    'mensaje1'      => Input::get('mensaje1')
+    );
+
+	Mail::send('emails.welcome3',  $data, function($message) use($data)
+	{
+		$message->to(Input::get('emailto'), 'Cliente')->subject('Propiedad Recomendada por '.Input::get('nombre1'))->cc('ventas@grupo-mesa.com');
+	});
+
+	Session::flash('message', 'Mensaje enviado');
+	return Redirect::back();
+});
 
 Route::post('send/emailcasa', function(){
 

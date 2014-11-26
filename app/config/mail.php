@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'clientes@ex000620.ferozo.com', 'name' => 'Persona Interesada en publicar su Propiedad'),
+	'from' => array('address' => 'clientes@ex000620.ferozo.com', 'name' => 'Administrador Grupo-Mesa'),
 
 	/*
 	|--------------------------------------------------------------------------
