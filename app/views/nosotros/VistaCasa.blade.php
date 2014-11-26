@@ -6,6 +6,8 @@
 	<meta property="og:image:type" content="image/jpg" />
 	<meta property="og:description" content="{{$propiedad->descripcion}}" />
 	<meta property="og:url" content="{{Request::url()}}" />
+	<meta property="og:locale:alternate" content="es_NI" />
+
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@grupomesagt">
@@ -178,8 +180,8 @@
 <span class='st_googleplus_large' displayText='Google +'></span>
 
 <!-------------------------------------------------------------------------------------------------------------------------------------->
-
-<button id="mailshare" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalshare">compartir</button>	
+<a id="mailshare" href="" data-toggle="modal" data-target="#myModalshare"><img  class="correo" src="{{asset ('img/correo.jpg') }}" width="40" ></a>
+	
 
 <!-- Modal -->
 <div class="modal fade" id="myModalshare" tabindex="-1" style="margin-top:2em !important" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -251,21 +253,22 @@
 <!---------------------------------------------------------------------------------------------------------------------------------->
 
 <hr>
+<!--
       <div class="socialtwitter">
-        <a href="https://twitter.com/share" data-count="horizontal" class="twitter-share-button" data-via="grupomesagt" data-lang="es" data-hashtags="megustapropiedad">Twittear</a>
+        <a href="https://twitter.com/share" data-count="horizontal" class="twitter-share-button" data-via="grupomesagt" data-lang="es" data-hashtags="megustapropiedad"></a>
 
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
 
       </div>
-
+      <img src="{{asset ('img/correo.jpg') }}">
       <div class="socialgoogle">
-            <!-- Inserta esta etiqueta en la sección "head" o justo antes de la etiqueta "body" de cierre. -->
+            
           <script src="https://apis.google.com/js/platform.js" async defer>
             {lang: 'es-419'}
           </script>
 
-          <!-- Inserta esta etiqueta donde quieras que aparezca Botón Compartir. -->
+          
           <div class="g-plus" data-action="share" data-annotation="none"></div>
       </div>
 
@@ -296,7 +299,7 @@
       </div>
 
 </div>
-
+-->
 <button id="interesa" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Contactar al Asesor</button>	
 
 <!-- Modal -->

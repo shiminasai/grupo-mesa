@@ -667,6 +667,9 @@ hr.separador1:after {
 	font-weight: bold;
 	text-decoration: none;
 }
+.correo{
+	margin-top: -25px;
+}
 /*-----------------------------------------------------------media screen------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	#buscanav{
