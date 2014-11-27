@@ -273,7 +273,7 @@
 			 	$zona = 'Zone';
 			 }
 
-			 Session::flash('message', 'departamento '.$departamento.' municipio '.$municipio.' zona '.$zona);
+			
 		
 			if ($codigo != '') {
 				
