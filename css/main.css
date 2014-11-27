@@ -638,6 +638,7 @@ hr.separador1:after {
 	height: 30px;
 	font-size: 11px !important;
 	font-weight: bold;
+	padding: 10px 5px !important;
 }
 .mvitas .usa{
 	font-family: Arial;
