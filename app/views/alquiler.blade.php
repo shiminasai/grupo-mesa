@@ -45,7 +45,7 @@
         </li>
         <?php
             $valor = " ";
-            if($value->moneda == 'dolares'){
+            if($value->moneda == 'Dolares'){
               $valor="U$";
             }else{
               $valor="C$";
@@ -63,20 +63,20 @@
     <li class="limpio list-group-item"></li>
     @elseif($value->tipoanuncio == 'Alquiler')
     <li class="list-group-item">
-        <i class="pull-left usa">U</i>
-        <i class="pull-left fa fa-usd fa-lg"></i>
+        <i class="pull-left usa"><strong>U</strong></i>
+        <i class="pull-left fa fa-usd"></i>
         <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
     </li>
     <li class="limpio list-group-item"></li>
     @else
     <li class="list-group-item">
-        <i class="pull-left usa">U</i>
-        <i class="pull-left fa fa-usd fa-lg"></i>
+        <i class="pull-left usa"><strong>U</strong></i>
+        <i class="pull-left fa fa-usd"></i>
         <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
     </li>
     <li class="list-group-item">
-        <i class="pull-left usa">U</i>
-        <i class="pull-left fa fa-usd fa-lg"></i>
+        <i class="pull-left usa"><strong>U</strong></i>
+        <i class="pull-left fa fa-usd"></i>
         <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
     </li>
     @endif

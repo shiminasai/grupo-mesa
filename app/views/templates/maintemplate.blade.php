@@ -416,7 +416,7 @@
 		        </li>
 		        <?php
 		            $valor = " ";
-		            if($value->moneda == 'dolares'){
+		            if($value->moneda == 'Dolares'){
 		              $valor="U$";
 		            }else{
 		              $valor="C$";
@@ -495,7 +495,7 @@
 		        </li>
 		        <?php
 		            $valor = " ";
-		            if($value->moneda == 'dolares'){
+		            if($value->moneda == 'Dolares'){
 		              $valor="U$";
 		            }else{
 		              $valor="C$";

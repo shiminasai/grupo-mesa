@@ -589,7 +589,7 @@ hr.separador1:after {
 	border-radius: 0px !important;
 	height: 40px;
 	font-size: 16px;
-	font-weight: bold;
+	
 	-webkit-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
 	-moz-box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
 	box-shadow: 0.2em 0.2em 0.5px #e6e6e6;
@@ -601,9 +601,9 @@ hr.separador1:after {
 .usa{
 	font-family: Arial;
 	font-style: normal;
-	font-weight: bold;
-	font-size: 23px;
-	margin-top: -8px;
+
+	font-size: 18px;
+	margin-top: -5px;
 	color: #3a57af;
 
 	}
