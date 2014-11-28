@@ -407,11 +407,11 @@
 						</div>
 		<ul class="list-group">
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <i class="pull-left fa fa-map-marker fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
 		        </li>
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <i class="pull-left fa fa-home fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{$value->tipopropiedad}}</p>
 		        </li>
 		        <?php
@@ -425,27 +425,27 @@
 
 		    @if($value->tipoanuncio == 'Venta')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @elseif($value->tipoanuncio == 'Alquiler')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @else
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    @endif
@@ -486,11 +486,11 @@
 						</div>
 		<ul class="list-group">
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <i class="pull-left fa fa-map-marker fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
 		        </li>
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <i class="pull-left fa fa-home fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{$value->tipopropiedad}}</p>
 		        </li>
 		        <?php
@@ -504,27 +504,27 @@
 
 		    @if($value->tipoanuncio == 'Venta')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @elseif($value->tipoanuncio == 'Alquiler')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @else
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    @endif
