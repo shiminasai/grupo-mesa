@@ -1,8 +1,12 @@
 @extends('templates.maintemplate')
 @section('imgfacebook')
-	<?php $imagen = DB::table('propiedades_img')->where('id_propiedad', '=', $propiedad->id )->first();  ?>
+	<?php 
+		$imagen = DB::table('propiedades_img')->where('id_propiedad', '=', $propiedad->id )->first();  
+		if(!$imagen)$imagen = 'noimage.jpg';
+		else $imagen = $imagen->ruta;		
+	?>
 	<meta property="og:title" content="{{$propiedad->titulo}}" />
-	<meta property="og:image" content="{{ asset('upload/'. $imagen->ruta .'') }}">
+	<meta property="og:image" content="{{ asset('upload/'. $imagen .'') }}">
 	<meta property="og:image:type" content="image/jpg" />
 	<meta property="og:description" content="{{$propiedad->descripcion}}" />
 	<meta property="og:url" content="{{Request::url()}}" />
@@ -14,12 +18,12 @@
 	<meta name="twitter:creator" content="@grupomesagt">
 	<meta name="twitter:title" content="{{$propiedad->titulo}}">
 	<meta name="twitter:description" content="{{$propiedad->descripcion}}">
-	<meta name="twitter:image:src" content="{{ asset('upload/'. $imagen->ruta .'') }}">
+	<meta name="twitter:image:src" content="{{ asset('upload/'. $imagen .'') }}">
 	<meta name="twitter:url" content="{{Request::url()}}" />
 
 	<meta itemprop="name" content="{{$propiedad->titulo}}">
 	<meta itemprop="description" content="{{$propiedad->descripcion}}">
-	<meta itemprop="image" content="{{ asset('upload/'. $imagen->ruta .'') }}">
+	<meta itemprop="image" content="{{ asset('upload/'. $imagen .'') }}">
 	<meta itemprop="url" content="{{Request::url()}}" />
 @stop
 @section('vistacasa')
@@ -28,54 +32,50 @@
 
 	<h2 class="titulovista" align="center">{{$propiedad->titulo}}</h2>
 	<br>
-
-	<div id="mini_carousel" class="carousel slide yeyo" data-pause="true">
-
-		<!-- Indicators -->
-<?php $minibanner = DB::table('propiedades_img')->where('id_propiedad','=',$propiedad->id)->get(); 
-			$cont = 0;
-			$count = 0;
-		?>
-<ol class="carousel-indicators">
-@foreach($minibanner as $value1)
-
+	<?php $minibanner = DB::table('propiedades_img')->where('id_propiedad','=',$propiedad->id)->get(); 
+		$cont = 0;
+		$count = 0;
+	?>
+	@if(!$minibanner)
+		<img src="{{ asset('img/noimage.jpg') }}" class="img-responsive">
+	@else
+		<div id="mini_carousel" class="carousel slide yeyo" data-pause="true">
+			{{-- NO JODAN COMO SIEMPRE NO IDENTAN LA MIERDA --}}
+			<!-- Indicators -->		
+			<ol class="carousel-indicators">
+				@foreach($minibanner as $value1)
 					@if($count == 0)
-					<li data-target="#mini_carousel" data-slide-to="0" class="active"></li>
-					<?php $count++; ?>
+						<li data-target="#mini_carousel" data-slide-to="0" class="active"></li>
+						<?php $count++; ?>
 					@else
-					<?php $count++; ?>
-					<li data-target="#mini_carousel" data-slide-to="{{$count-1}}"></li>
-					
-						@endif			
-				@endforeach
-
-				                                                    
-</ol>
-		
+						<?php $count++; ?>
+						<li data-target="#mini_carousel" data-slide-to="{{$count-1}}"></li>			
+					@endif			
+				@endforeach						                                                    
+			</ol>		
 			<div class="carousel-inner yeyo">
 				@foreach($minibanner as $value)
 					@if($cont == 0)
-					<div class="item active">
-						<img class="" src="{{ asset('upload/'. $value->ruta .'') }}" alt="...">
-						<?php $cont++; ?>                          
-					</div>	
+						<div class="item active">
+							<img class="" src="{{ asset('upload/'. $value->ruta .'') }}" alt="...">
+							<?php $cont++; ?>                          
+						</div>	
 					@else
-					<div class="item">
-						<img class="" src="{{ asset('upload/'. $value->ruta .'') }}" alt="..."> 
-                    
-					</div>	
+						<div class="item">
+							<img class="" src="{{ asset('upload/'. $value->ruta .'') }}" alt="..."> 	                
+						</div>	
 					@endif			
 				@endforeach               
 			</div>
-
-		<!-- Controls -->
-		<a class="left carousel-control" href="#mini_carousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<a class="right carousel-control" href="#mini_carousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#mini_carousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#mini_carousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	@endif
 
 
 	@if($propiedad->url != '')
@@ -179,7 +179,7 @@
 <span class='st_linkedin_large' displayText='LinkedIn'></span>
 <span class='st_googleplus_large' displayText='Google +'></span>
 
-<!-------------------------------------------------------------------------------------------------------------------------------------->
+{{-- ---------------------------------------------------------------------------------------------------------------------------------- --}}
 <a id="mailshare" href="" data-toggle="modal" data-target="#myModalshare"><img  class="correo" src="{{asset ('img/correo.jpg') }}" width="40" ></a>
 	
 
