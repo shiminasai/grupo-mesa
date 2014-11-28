@@ -287,15 +287,29 @@
 					
 				
 			}elseif($bl != ''){
-				
+				if ($venta == 'Venta') {
 					$resultado = Propiedad::where('estado','=','1')
 					->where('titulo','like','%'.$bl.'%')
+					->whereIn('tipoanuncio', array('Venta', 'Venta y Alquiler'))
 					->orwhere('tipoanuncio','like','%'.$bl.'%')
 					->orwhere('tipopropiedad','like','%'.$bl.'%')
 					->orwhere('estadofisico','like','%'.$bl.'%')
 					->orwhere('descripcion','like','%'.$bl.'%')
 					->orwhere('zona','like','%'.$bl.'%')
 					->get();
+				} else {
+					$resultado = Propiedad::where('estado','=','1')
+					->where('titulo','like','%'.$bl.'%')
+					->whereIn('tipoanuncio', array('Alquiler', 'Venta y Alquiler'))
+					->orwhere('tipoanuncio','like','%'.$bl.'%')
+					->orwhere('tipopropiedad','like','%'.$bl.'%')
+					->orwhere('estadofisico','like','%'.$bl.'%')
+					->orwhere('descripcion','like','%'.$bl.'%')
+					->orwhere('zona','like','%'.$bl.'%')
+					->get();
+				}
+				
+					
 
 					return View::make('buscador')->with('propiedades', $resultado);
 				

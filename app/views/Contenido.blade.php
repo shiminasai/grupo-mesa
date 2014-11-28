@@ -35,8 +35,8 @@
 
     <div class="viewprinc view-second">
     <?php $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?>
-    @if($imagen->count() == 0)
-    <img src="" width="80%"/>
+    @if(!$imagen)
+    <img src="{{ asset('img/noimage.jpg') }}" width="80%"/>
     @else
      <img src="{{ asset('upload/'. $imagen->ruta .'') }}" width="80%"/>
     @endif                  

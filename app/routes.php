@@ -82,6 +82,7 @@ Route::post('send/shareemailcasa', function(){
         
                     'name1'         => Input::get('nombre1'),        
                     'email1'        => Input::get('email1'),
+                    'nameto'        => Input::get('nameto'),
                     'emailto'       => Input::get('emailto'),
                     'mensaje1'      => Input::get('mensaje1')
     );
