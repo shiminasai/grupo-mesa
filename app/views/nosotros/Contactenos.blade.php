@@ -15,7 +15,7 @@
     <br>
     <div class="form-group">
       
-      <label class="col-lg-5 control-label">Telefonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a>/ USA:0109453530</label>
+      <label class="col-lg-5 control-label">Telefonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a> /<a href="callto://+50522537777"> <i class="fa fa-skype"> </i> USA:(505) 8663-1841</a></label>
       
       <label class="col-lg-4 control-label">Email: ventas@grupomesa.com</label>
       <label class="col-lg-3 control-label">

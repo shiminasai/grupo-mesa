@@ -107,7 +107,7 @@
 	<div class="infoB">
 
 <h4>Teléfonos: <a href="callto://+50522537777"><i class="fa fa-skype"> </i> (505) 2253-7777</a></h4>
-<h4>USA: <a href="callto://+0109453530"><i class="fa fa-skype"> </i> 0109453530</a></h4>
+<h4>USA: <a href="callto://+50586631841"><i class="fa fa-skype"> </i> (505) 8663-1841</a></h4>
 <h4>Email: ventas@grupo-mesa.com</h4>
 <h4>Skype: <a href="skype:mesabienesraices?call"><i class="fa fa-skype"> </i> mesabienesraices</a></h4>
 
@@ -407,16 +407,16 @@
 						</div>
 		<ul class="list-group">
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <i class="pull-left fa fa-map-marker fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
 		        </li>
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <i class="pull-left fa fa-home fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{$value->tipopropiedad}}</p>
 		        </li>
 		        <?php
 		            $valor = " ";
-		            if($value->moneda == 'dolares'){
+		            if($value->moneda == 'Dolares'){
 		              $valor="U$";
 		            }else{
 		              $valor="C$";
@@ -425,27 +425,27 @@
 
 		    @if($value->tipoanuncio == 'Venta')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @elseif($value->tipoanuncio == 'Alquiler')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @else
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    @endif
@@ -486,16 +486,16 @@
 						</div>
 		<ul class="list-group">
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-map-marker fa-lg"></i>
+		          <i class="pull-left fa fa-map-marker fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{ $value->pais }}, {{$dep2->opcion}}</p>
 		        </li>
 		        <li class="list-group-item mvitas">
-		          <i class="pull-left fa fa-home fa-lg"></i>
+		          <i class="pull-left fa fa-home fa-lg hidden-xs"></i>
 		          <p class="pull-left">{{$value->tipopropiedad}}</p>
 		        </li>
 		        <?php
 		            $valor = " ";
-		            if($value->moneda == 'dolares'){
+		            if($value->moneda == 'Dolares'){
 		              $valor="U$";
 		            }else{
 		              $valor="C$";
@@ -504,27 +504,27 @@
 
 		    @if($value->tipoanuncio == 'Venta')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @elseif($value->tipoanuncio == 'Alquiler')
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    <li class="limpio list-group-item mvitas"></li>
 		    @else
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
 		    </li>
 		    <li class="list-group-item mvitas">
-		        <i class="pull-left usa">U</i>
-		        <i class="pull-left fa fa-usd fa-lg"></i>
+		        <i class="pull-left usa hidden-xs">U</i>
+		        <i class="pull-left fa fa-usd fa-lg hidden-xs"></i>
 		        <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
 		    </li>
 		    @endif

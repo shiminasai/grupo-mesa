@@ -26,7 +26,8 @@
                 	<td align="center" valign="top" style="border-collapse:collapse"> 
                         
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                        	<tbody><tr>
+                        	<tbody>
+                            <tr>
                             	<td align="center" valign="top" style="border-collapse:collapse">
                                 	
                                     <table border="0" cellpadding="20" cellspacing="0" width="100%" style="border-top:0;border-bottom:0;background-color:#7f97b7">
@@ -40,7 +41,7 @@
                                                        	<?php $minibanner = DB::table('propiedades_img')->where('id_propiedad','=',$idshare)->take(1)->get(); ?>    
                                                        	@foreach($minibanner as $value)
                                                        	
-                                                        	<img src="{{ asset('upload/'. $value->ruta .'') }}" alt="" border="0" style="margin:0;padding:0;max-width:400px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd a6T" tabindex="0">@endforeach
+                                                        	<img src="<?php echo $message->embed('upload/'. $value->ruta .'') ?>" alt="" border="0" style="margin:0;padding:0;max-width:400px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd a6T" tabindex="0">@endforeach
                                                         	<div class="a6S" dir="ltr" style="opacity: 0.01; left: 807.850723266602px; top: 342.666656494141px;"><div id=":3t" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Descargar el archivo adjunto " data-tooltip-class="a1V" data-tooltip="Descargar"><div class="aSK J-J5-Ji aYr"></div></div></div>
                                                         </td>
                                                     </tr>
@@ -50,13 +51,16 @@
                                                             	<tbody><tr>
                                                                 	<td valign="top" style="border-collapse:collapse;color:#f4f4f4;font-family:Helvetica;font-size:16px;font-weight:normal;line-height:100%;text-align:center;text-decoration:none"><a href="{{$urlshare}}" style="color:#ffffff;font-family:Helvetica;font-size:16px;font-weight:normal;line-height:100%;text-align:center;text-decoration:none" target="_blank">Ver Más.</a></td>
                                                                 </tr>
-                                                            </tbody></table>
+                                                            </tbody>
+                                                            </table>
                                                         </td>
                                                     </tr>
-                                                </tbody></table>
+                                                </tbody>
+                                                </table>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                    </tbody>
+                                    </table>
                                     
                                 </td>
                             </tr>
@@ -125,8 +129,10 @@ Baños</td>
                                                                         <table border="0" cellpadding="0" cellspacing="0">
                                                                             <tbody><tr>
                                                                                 <td align="center" valign="top" width="300" style="padding-top:20px;border-collapse:collapse">
-                                                                                   <?php $minibanner1 = DB::table('propiedades_img')->where('id_propiedad','=',$idshare)->skip(1)->take(1)->get(); ?> @foreach($minibanner1 as $value1)
-                                                                                    <img src="{{ asset('upload/'. $value1->ruta .'') }}" width="100%" alt="" border="0" style="margin:0;padding:0;max-width:300px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd">@endforeach
+                                                                                   <?php $minibanner1 = DB::table('propiedades_img')->where('id_propiedad','=',$idshare)->skip(1)->take(1)->get(); ?> 
+                                                                                   @foreach($minibanner1 as $value1)
+                                                                                    <img src="<?php echo $message->embed('upload/'. $value1->ruta .'') ?>" width="300px" alt="" border="0" style="margin:0;padding:0;max-width:300px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd">
+                                                                                    @endforeach
                                                                                 </td>
                                                                                 <td width="40" style="padding-top:20px;border-collapse:collapse">
                                                                                 	<br>
@@ -134,7 +140,8 @@ Baños</td>
                                                                                 <td align="center" valign="top" width="300" style="padding-top:20px;border-collapse:collapse">
                                                                                   <?php $minibanner2 = DB::table('propiedades_img')->where('id_propiedad','=',$idshare)->skip(2)->take(1)->get(); ?> 
                                                                                    @foreach($minibanner2 as $value2)
-                                                                                    <img src="{{ asset('upload/'. $value2->ruta .'') }}" width="100%" alt="" border="0" style="margin:0;padding:0;max-width:300px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd"> @endforeach
+                                                                                    <img src="<?php echo $message->embed('upload/'. $value2->ruta .'') ?>" width="300px" alt="" border="0" style="margin:0;padding:0;max-width:300px;border:0;min-height:auto;line-height:100%;outline:none;text-decoration:none" class="CToWUd"> 
+                                                                                    @endforeach
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody></table>
@@ -172,7 +179,9 @@ Baños</td>
                         
                     </td>
                 </tr>
-            </tbody></table>
-            <table>
+            </tbody>
+            </table>
+
+        <table>
 </body>
 </html>
