@@ -14,7 +14,7 @@
             	<tbody>
                	<tr>
                	    <td valign="middle" style="padding-top:20px;border-collapse:collapse;color:#f4f4f4;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left; padding-left:10px">
-                      El/La Señor@ {{$name1}} de correo {{$email1}}, compartió esta propiedad con usted<br> 
+                      Estimado Señor@ {{ $nameto }}, El/La Señor@ {{$name1}} de correo {{$email1}}, compartió esta propiedad con usted<br> 
                       y le dejó el siguiente mensaje: <br>
                       {{$mensaje1}}. <br>
                       <br>

@@ -207,11 +207,18 @@
 						<input required type="email" class="form-control" placeholder="Escriba su Correo" name="email1">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<label class="col-lg-2 control-label">Enviar a</label>
 					<div class="col-lg-10">
-						<input required type="email" class="form-control" placeholder="Correo a Enviar" name="emailto">
+						<input required type="email" class="form-control" placeholder="Nombre del Destinatario" name="nameto">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-2 control-label">E-mail</label>
+					<div class="col-lg-10">
+						<input required type="email" class="form-control" placeholder="Correo del Destinatario" name="emailto">
 					</div>
 				</div>
 
