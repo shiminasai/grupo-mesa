@@ -76,12 +76,21 @@
 <div class="col-md-12 col-xs-12">
 	
 	<br>
-<?php $img = DB::table('propiedades_img')->where('id_propiedad', '=', $propiedad->id)->get(); ?>
-	@foreach($img as $value)
-
+<?php 
+	$img = DB::table('propiedades_img')->where('id_propiedad', '=', $propiedad->id)->get(); 	
+?>
+	@if(!$img) 
+		<?php $img = 'noimage.jpg'; ?>
 		<div class="col-md-3 col-xs-6">
-			<img style="padding-bottom:3em;" width="100%" src="{{ asset('upload/'. $value->ruta .'') }}">
-		</div>
-	@endforeach
+			<img style="padding-bottom:3em;" src="{{ asset('upload/'. $img .'') }}" class="img-responsive">
+		</div>	
+	@else
+		@foreach($img as $value)
+
+			<div class="col-md-3 col-xs-6">
+				<img style="padding-bottom:3em;" width="100%" src="{{ asset('upload/'. $value->ruta .'') }}">
+			</div>
+		@endforeach
+	@endif	
 </div>
 @stop
