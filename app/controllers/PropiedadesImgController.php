@@ -42,7 +42,7 @@ class PropiedadesImgController extends \BaseController {
 
 	public function showupdate($id){
 			$imagenes = PropiedadImg::where('id_propiedad', $id)->get();
-			return View::make('administrador.modificarImagen')->with('imagenes', $imagenes);
+			return View::make('administrador.modificarImagen', array('imagenes' => $imagenes, 'id_propiedad' => $id));
 		}
 
 	public function update($id){
