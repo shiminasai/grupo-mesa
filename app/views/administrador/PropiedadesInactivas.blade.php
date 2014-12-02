@@ -6,9 +6,13 @@
 
 @section('formulario')
 <div class="tituloanuncio">
-	<h4 style="text-align:center;"><strong>Ver Propiedades</strong></h4>
+	<h4 style="text-align:center;"><strong>Ver Propiedades Inactivas</strong></h4>
 </div>
 
+@if($propiedades->count() == 0)
+<br><br>
+<div class="alert alert-info">No hay propiedades Inactivas</div>
+@endif
 
 <div>
 	@if(Auth::user()->role_id == '0')
@@ -58,22 +62,6 @@
 
 	</div>
 
-	<!-- <div class="btn-group dropup col-sm-4">
-					  <button type="button" class="btn btn-success">Mostrar solo Propiedades</button>
-					  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-					    <span class="caret"></span>
-					    <span class="sr-only">Toggle Dropdown</span>
-					  </button>
-					  <ul class="dropdown-menu dropdown-menu-right" role="menu">
-					  	
-					  	<li><a href="{{URL::to('admin/filtro/propiedad/activas')}}">Activas</a></li>
-					    <li><a href="{{URL::to('admin/filtro/propiedad/inactivas')}}">Inactivas</a></li>
-						
-						</a></li>
-
-					  </ul>
-	</div> -->
-
 	<div class="col-sm-4">
 
 		<div class="col-sm-12">
@@ -85,26 +73,18 @@
 
 		<div class="col-sm-12">
 			<div class="panel-body">
-				<a href="{{URL::to('admin/filtro/propiedad/inactivas')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-th-list" style="margin-right:0.6em;"></span>Mostrar Solo Propiedades Inactivas</button></a>
+				<a href="{{URL::to('administrador/verPropiedades')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-left" style="margin-right:0.6em;"></span>Regresar</button></a>
 			</div>
 		</div> 
 
 	</div>
 
+
+	
+
 	@endif	
 
 </div>
-
-@if(Session::has('message'))
-<div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
-
-
-@if(Auth::user()->role_id == '1' && $propiedades->count() == 0)
-
-<br><br>
-<div class="alert alert-info">Usted no tiene Propiedades Activas</div>
-@else
 
 <div class="table-responsive">
 	<table class="table table-striped table-hover table-condensed panel-primary">
@@ -125,7 +105,6 @@
 
 		</thead>
 		<tbody >
-		@endif
 			@foreach($propiedades as $value)
 
 			<?php   $prop = Propietario::where('id', '=', $value->id_propietario)->first();
@@ -133,14 +112,11 @@
 					$municipio = DB::table('municipio')->where('id', $value->municipio)->first();
 					$img = DB::table('propiedades_img')->where('id_propiedad', $value->id)->first();
 					$usar = DB::table('usuarios')->where('username', $value->id_usuario)->first();
-
-					if(!$img) $img = 'noimage.jpg';
-					else $img = $img->ruta;
 				?>
 			<tr>
 
 				<td style="text-align:center;">
-				 <img style="width:120px;" src="{{ asset('upload/'. $img .'') }}" alt="..."> 
+				 <img style="width:120px;" src="{{ asset('upload/'. $img->ruta .'') }}" alt="..."> 
 				</td style="text-align:center;">
 				<td style="text-align:center;">{{ $value->visitas  }}</td>
 
@@ -157,7 +133,7 @@
 
 					<?php
 						$valor = " ";
-						if($value->moneda == 'Dolares'){
+						if($value->moneda == 'dolares'){
 							$valor="U$";
 						}else{
 							$valor="C$";
