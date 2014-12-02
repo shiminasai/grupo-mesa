@@ -62,10 +62,21 @@
 
 	</div>
 
-	<div class="col-sm-offset-8">
-		<div class="panel-body">
-			<a href="{{URL::to('administrador/verPropiedades')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-left" style="margin-right:0.6em;"></span>Regresar</button></a>
-		</div>
+	<div class="col-sm-4">
+
+		<div class="col-sm-12">
+			<div class="panel-body">
+				<a href="{{URL::to('admin/filtro/propiedad/inactivas')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-th-list" style="margin-right:0.6em;"></span>Mostrar Solo Propiedades Inactivas</button></a>
+			</div>
+		</div> 
+
+
+		<div class="col-sm-12">
+			<div class="panel-body">
+				<a href="{{URL::to('administrador/verPropiedades')}}"><button type="button" id="boton" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-left" style="margin-right:0.6em;"></span>Regresar</button></a>
+			</div>
+		</div> 
+
 	</div>
 
 	@endif	
