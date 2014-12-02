@@ -250,12 +250,32 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				{{ Form::submit('Enviar' , array('class'=> 'btn btn-primary')) }}
+				{{ Form::submit('Enviar' , array('class'=> 'btn btn-primary', 'data-toggle' => 'modal',  'data-target' => '#myMSJModal')) }}
 			</div>
 			{{ Form::close() }}
 		</div>
 	</div>
 </div>
+
+
+<!-- Mensaje Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myMSJModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:15em">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Mensaje</h4>
+      </div>
+      <div class="modal-body">
+        SU MENSAJE FUE ENVIADO, GRACIAS POR COMPARTIR ESTA PROPIEDAD.
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <!---------------------------------------------------------------------------------------------------------------------------------->
 
