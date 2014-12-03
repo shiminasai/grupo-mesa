@@ -20,9 +20,14 @@
            
     ?>
 
-  <?php $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); ?>
+  <?php 
+    $imagen = PropiedadImg::where('id_propiedad', '=', $value->id )->orderBy('id')->first(); 
+
+    if(!$imagen) $imagen = 'noimage.jpg';
+    else $imagen = $imagen->ruta;
+  ?>
     <div class="viewprinc view-second">                  
-      <img src="{{ asset('upload/'. $imagen->ruta .'') }}"/>
+      <img src="{{ asset('upload/'. $imagen .'') }}"/>
       <div class="mask"></div>
       <div class="content">
         <h2>{{$value->tipoanuncio}} de {{$value->tipopropiedad}}</h2>
