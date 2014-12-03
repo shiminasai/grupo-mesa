@@ -327,6 +327,13 @@ Route::group(array('before' => 'auth'), function()
 		return View::make('administrador.PropiedadesActivas')->with('propiedades', $propiedades);// vista de las propiedades activas
 	});
 
+	Route::get('admin/filtro/propiedad/inactivas', function(){
+
+		$propiedades = DB::table('propiedades')->where('estado','0')->orderby('created_at','DESC')->paginate(10);
+	
+		return View::make('administrador.PropiedadesInactivas')->with('propiedades', $propiedades);// vista de las propiedades activas
+	});
+
 
 	Route::get('admin/filtro/propiedad/codigo', array('uses' => 'PropiedadesController@filtro'));
 
