@@ -66,30 +66,36 @@
 
     @if($value->tipoanuncio == 'Venta')
     <li class="list-group-item">
-        <i class="pull-left usa"><strong>U</strong></i>
-        <i class="pull-left fa fa-usd"></i>
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
         <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
     </li>
     <li class="limpio list-group-item"></li>
     @elseif($value->tipoanuncio == 'Alquiler')
     <li class="list-group-item">
-        <i class="pull-left usa"><strong>U</strong></i>
-        <i class="pull-left fa fa-usd"></i>
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
         <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
     </li>
     <li class="limpio list-group-item"></li>
     @else
     <li class="list-group-item">
-        <i class="pull-left usa"><strong>U</strong></i>
-        <i class="pull-left fa fa-usd"></i>
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
         <p class="pull-left"><strong>Venta: {{$valor}} {{$value->precioventa}}</strong></p>
     </li>
     <li class="list-group-item">
-        <i class="pull-left usa"><strong>U</strong></i>
-        <i class="pull-left fa fa-usd "></i>
+        <i class="pull-left usa">U</i>
+        <i class="pull-left fa fa-usd fa-lg"></i>
         <p class="pull-left"><strong>Alquiler: {{$valor}} {{$value->precioalquiler}} {{ $value->tiempo }}</strong></strong></p>
     </li>
     @endif
+    <li class="boton-ver list-group-item">
+      <a class="center-block" href="{{  URL::to('VistaCasa/'. $value->id .'#ContenidoPrincipal' ) }}" class="btn btn-small btn-primary">Ver Propiedad</a>
+    </li>
+    </ul>
+  </div>
+  @endif
 
   @endforeach
 </div>
